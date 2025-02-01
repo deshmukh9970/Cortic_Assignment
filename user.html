@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="stylessec.css">
+</head>
+<body>
+    <script>
+        let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!loggedInUser || loggedInUser.role !== "USER") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <nav>
+        <a href="user.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="all_products.html">All Products</a>
+        <a href="#">User: <span id="userName"></span></a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <h1>Welcome, User!</h1>
+
+    <script>
+        document.getElementById("userName").textContent = loggedInUser.username;
+    </script>
+    <script src="script2.js"></script>
+</body>
+</html>

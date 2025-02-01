@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="stylessec.css">
+</head>
+<body>
+    <nav>
+        <a href="user.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="all_products.html">All Products</a>
+        <a href="#">User Name</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <h1>Product Categories</h1>
+    <div id="categoryContainer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let products = JSON.parse(localStorage.getItem("products")) || [];
+            let categories = {};
+
+            // Group products by category
+            products.forEach(product => {
+                if (!categories[product.category]) {
+                    categories[product.category] = [];
+                }
+                categories[product.category].push(product);
+            });
+
+            let categoryContainer = document.getElementById("categoryContainer");
+
+            for (let category in categories) {
+                let section = document.createElement("section");
+                section.innerHTML = `<h2>${category}</h2>`;
+                categories[category].forEach(product => {
+                    section.innerHTML += `
+                        <div class="product-card">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                        </div>
+                    `;
+                });
+                categoryContainer.appendChild(section);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Products</title>
+    <link rel="stylesheet" href="stylessec.css">
+</head>
+<body>
+    <header class="admin-nav">
+        <nav>
+            <div class="logo">
+                <h2>Admin Dashboard</h2>
+            </div>
+            <div class="nav-links">
+                <a href="add_product.html">Add Product</a>
+                <a href="show_product.html">Show Product</a>
+                <a href="update_product.html">Update Product</a>
+                <a href="#" class="admin-name">Admin Name</a>
+                <a href="index.html" class="logout">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Product List</h1>
+        <div id="productList" class="product-container"></div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let products = JSON.parse(localStorage.getItem("products")) || [];
+            let productList = document.getElementById("productList");
+
+            if (products.length === 0) {
+                productList.innerHTML = "<p>No products found.</p>";
+            } else {
+                products.forEach(product => {
+                    let productCard = document.createElement("div");
+                    productCard.classList.add("product-card");
+
+                    productCard.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <p>Price: $${product.price}</p>
+                    `;
+
+                    productList.appendChild(productCard);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

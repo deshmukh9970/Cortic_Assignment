@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="stylesheet" href="stylessec.css">
+</head>
+<body>
+    <nav>
+        <a href="user.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="all_products.html">All Products</a>
+        <a href="#">User Name</a>
+        <a href="index.html">Logout</a>
+    </nav>
+
+    <h1>All Products</h1>
+    <div id="allProductsContainer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let products = JSON.parse(localStorage.getItem("products")) || [];
+            let allProductsContainer = document.getElementById("allProductsContainer");
+
+            products.forEach(product => {
+                let productCard = document.createElement("div");
+                productCard.classList.add("product-card");
+
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p>Price: $${product.price}</p>
+                `;
+                
+                allProductsContainer.appendChild(productCard);
+            });
+        });
+    </script>
+</body>
+</html>

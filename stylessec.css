@@ -1,0 +1,250 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo h2 {
+    font-size: 24px;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    background-color: #575757;
+    color: #fff;
+}
+
+nav .nav-links a.admin-name, nav .nav-links a.user-name {
+    background-color: #1d72b8;
+}
+
+nav .nav-links a.logout {
+    background-color: #e74c3c;
+}
+
+nav .nav-links a.logout:hover {
+    background-color: #c0392b;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Admin specific styles */
+.admin-nav .nav-links a.admin-name {
+    background-color: #2d89ef; /* Blue for Admin */
+}
+
+.admin-nav .nav-links a {
+    background-color: #28a745; /* Green for general links */
+}
+
+/* User specific styles */
+.user-nav .nav-links a.user-name {
+    background-color: #ff9900; /* Orange for User */
+}
+
+.user-nav .nav-links a {
+    background-color: #007bff; /* Blue for general links */
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Add Product Form */
+.add-product-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-product-form input, .add-product-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+/* Product List */
+.product-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.product-card {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Update Product Form */
+.update-product-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.update-product-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.update-product-form input, .update-product-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.update-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.update-button:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Bar */
+nav {
+    background: #007bff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background: #0056b3;
+}
+
+/* Product Grid */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+

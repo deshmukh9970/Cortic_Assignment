@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="stylessec.css">
+</head>
+<body>
+    <script>
+        let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!loggedInUser || loggedInUser.role !== "ADMIN") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <nav>
+        <a href="add_product.html">Add Product</a>
+        <a href="show_product.html">Show Product</a>
+        <a href="update_product.html">Update Product</a>
+        <a href="#">Admin: <span id="adminName"></span></a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <h1>Welcome, Admin!</h1>
+
+    <script>
+        document.getElementById("adminName").textContent = loggedInUser.username;
+    </script>
+    <script src="script1.js"></script>
+</body>
+</html>
